@@ -1,4 +1,4 @@
-The module integrates Magento 2 with the **[Stripe](https://stripe.com/)** payment service.
+An ACH payment module for Magento 2.
 The module is **free** and **open source**.
 
 ## How to install
