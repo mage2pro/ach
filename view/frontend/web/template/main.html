@@ -1,0 +1,48 @@
+<!-- 2017-09-08
+jQuery Validate plugin requres the validated elements to have a name:
+https://github.com/magento/magento2/blob/2.2.0-RC1.5/lib/web/jquery/jquery.validate.js#L487-L499
+Stripe and its clones forbids us to assign the `name` attribute to the bank card form elements,
+so I have implemented a patch to jQuery Validate plugin: it uses ID if the name is absent:
+https://github.com/mage2pro/core/blob/2.11.27/Core/view/base/web/main.js#L43-L72
+So, in our case the validated elements should have an ID or a name.
+ -->
+<div class='field required'>
+	<label class='label' data-bind="attr: {for: fid('routing')}" >
+		<span><!-- ko df_i18n: "Routing Number"--><!-- /ko --></span>
+	</label>
+	<div class='control'>
+		<input
+			class='input-text required-entry'
+			data-bind="
+				attr: {
+					'data-container': getCode() + '-routing'
+					,id: fid('routing')
+					,title: $t('Routing Number')
+				}
+				,value: routing
+				,valueUpdate: 'keyup'
+			"
+			type='text'
+		>
+	</div>
+</div>
+<div class='field required'>
+	<label class='label' data-bind="attr: {for: fid('account')}" >
+		<span><!-- ko df_i18n: "Account Number"--><!-- /ko --></span>
+	</label>
+	<div class='control'>
+		<input
+			class='input-text required-entry'
+			data-bind="
+				attr: {
+					'data-container': getCode() + '-account'
+					,id: fid('account')
+					,title: $t('Account Number')
+				}
+				,value: account
+				,valueUpdate: 'keyup'
+			"
+			type='text'
+		>
+	</div>
+</div>
