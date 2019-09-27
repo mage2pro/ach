@@ -6,43 +6,45 @@ so I have implemented a patch to jQuery Validate plugin: it uses ID if the name 
 https://github.com/mage2pro/core/blob/2.11.27/Core/view/base/web/main.js#L43-L72
 So, in our case the validated elements should have an ID or a name.
  -->
-<div class='field required'>
-	<label class='label' data-bind="attr: {for: fid('routing')}" >
-		<span><!-- ko df_i18n: "Routing Number"--><!-- /ko --></span>
-	</label>
-	<div class='control'>
-		<input
-			class='input-text required-entry'
-			data-bind="
-				attr: {
-					'data-container': getCode() + '-routing'
-					,id: fid('routing')
-					,title: $t('Routing Number')
-				}
-				,value: routing
-				,valueUpdate: 'keyup'
-			"
-			type='text'
-		>
+<fieldset class='fieldset'>
+	<div class='field required'>
+		<label class='label' data-bind="attr: {for: fid('routing')}" >
+			<span><!-- ko df_i18n: "Routing Number"--><!-- /ko --></span>
+		</label>
+		<div class='control'>
+			<input
+				class='input-text required-entry'
+				data-bind="
+					attr: {
+						'data-container': getCode() + '-routing'
+						,id: fid('routing')
+						,title: $t('Routing Number')
+					}
+					,value: routing
+					,valueUpdate: 'keyup'
+				"
+				type='text'
+			>
+		</div>
 	</div>
-</div>
-<div class='field required'>
-	<label class='label' data-bind="attr: {for: fid('account')}" >
-		<span><!-- ko df_i18n: "Account Number"--><!-- /ko --></span>
-	</label>
-	<div class='control'>
-		<input
-			class='input-text required-entry'
-			data-bind="
-				attr: {
-					'data-container': getCode() + '-account'
-					,id: fid('account')
-					,title: $t('Account Number')
-				}
-				,value: account
-				,valueUpdate: 'keyup'
-			"
-			type='text'
-		>
+	<div class='field required'>
+		<label class='label' data-bind="attr: {for: fid('account')}" >
+			<span><!-- ko df_i18n: "Account Number"--><!-- /ko --></span>
+		</label>
+		<div class='control'>
+			<input
+				class='input-text required-entry'
+				data-bind="
+					attr: {
+						'data-container': getCode() + '-account'
+						,id: fid('account')
+						,title: $t('Account Number')
+					}
+					,value: account
+					,valueUpdate: 'keyup'
+				"
+				type='text'
+			>
+		</div>
 	</div>
-</div>
+</fieldset>
