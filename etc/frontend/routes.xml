@@ -4,8 +4,8 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd"
 >
 	<router id='standard'>
-		<route id='Dfe_Qiwi' frontName='dfe-qiwi'>
-			<module name='Dfe_Qiwi'/>
+		<route id='Dfe_ACH' frontName='dfe-ach'>
+			<module name='Dfe_ACH'/>
 		</route>
 	</router>
 </config>
