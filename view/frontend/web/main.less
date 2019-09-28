@@ -5,6 +5,8 @@
 	> .payment-method-title {padding-bottom: @marginV !important;}
 	> .payment-method-content {
 		padding: 0 !important;
+		// 2019-09-28 The left padding is the same as for the payment method title.
+		@media only screen and (max-width: 767px) {padding: 0 15px !important;}
 		input {height: auto;}
 		.field {
 			&._required, &.required {> label:after {margin: 0 !important;}}
@@ -22,7 +24,10 @@
 		}
 		.checkout-billing-address {
 			margin-bottom: @marginV !important;
-			button {padding: 0 !important;}
+			button {
+				padding: 0 !important;
+				&.action-cancel {margin-top: 0;}
+			}
 			> fieldset {margin-bottom: @marginV;}
 			> .billing-address-details {
 				font-size: @fontSize; line-height: 1.5;
