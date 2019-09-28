@@ -8,7 +8,9 @@ You can use the following for the default help text, but we definitely want to b
 	The Account number is the one to the right of that.
 	You do not need to include the check #, which is to the right of the Account #."
 » https://www.upwork.com/ab/f/contracts/22916307 -->
-<!-- ko text: config('desc') --><!-- /ko -->
+<!-- ko if: config('desc') -->
+	<div data-bind="html: config('desc')"></div>
+<!-- /ko -->
 <!--
 2017-09-08
 jQuery Validate plugin requres the validated elements to have a name:

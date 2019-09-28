@@ -25,6 +25,6 @@ final class ConfigProvider extends \Df\Payment\ConfigProvider {
 		  * 2) @see \Df\GingerPaymentsBase\ConfigProvider::config()
 		  * https://github.com/mage2pro/ginger-payments-base/blob/1.2.3/ConfigProvider.php#L45
 		  */
-		'desc' => $s->description()
+		'desc' => nl2br($s->description())
 	] + parent::config();}
 }
