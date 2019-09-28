@@ -1,45 +1,62 @@
 // 2019-09-27
 .payment-method.dfe_ach {
-	.actions-toolbar {margin-left: 0 !important;}
-	form {
-		> div:not(:last-of-type) {margin-bottom: 1em !important;}
-		> .desc {font-size: 14px;}
-		// 2019-09-28 "Responsive Web Design - Images": https://www.w3schools.com/css/css_rwd_images.asp
-		> .image {
-			background: url('./example.jpg') no-repeat;
-			background-size: contain;
-			display: block;
-			height: 197px;
-			width: 100%;
+	@marginV: 1rem;
+	@fontSize: 14px;
+	> .payment-method-title {padding-bottom: @marginV !important;}
+	> .payment-method-content {
+		padding: 0 !important;
+		.actions-toolbar {
+			margin-left: 0 !important;
+			.primary {margin-top: 0 !important;}
 		}
-		> .fieldset {
-			display: flex;
-			flex-wrap: wrap;
-			> .field {
-				margin: 0 !important;
-				.control, label {float: none !important;}
-				input {
-					// 2019-09-28
-					// https://www.fontspace.com/digital-graphics-labs/micr-encoding
-					// https://www.fontspace.com/category/cheque
-					// https://www.quora.com/Why-is-the-font-for-routing-numbers-and-account-numbers-so-strange-on-checks/answer/Stephen-Coles-1
-					@font-face {font-family: 'MICR'; src: url('./MICR.ttf');}
-					// 2019-09-28 https://www.w3schools.com/cssref/css_websafe_fonts.asp
-					font-family: 'MICR', 'Courier New', Courier, monospace;
-					font-size: 30px;
-					height: auto;
-					padding: 0 0.2em;
-					&#dfe_ach_routing {width: 5.1em;}
-					&#dfe_ach_account {width: 9em;}
+		.checkout-billing-address {
+			margin-bottom: @marginV !important;
+			> .billing-address-details {
+				font-size: @fontSize; line-height: 1.5;
+				> button {opacity: 0.5; &:hover {opacity: 1;}}
+			}
+		}
+		// 2019-09-28 The `.dfe_ach` rule is important here because we have another form: for a billing address.
+		form.dfe_ach {
+			> div:not(:last-of-type) {margin-bottom: @marginV !important;}
+			> .desc {font-size: @fontSize;}
+			// 2019-09-28 "Responsive Web Design - Images": https://www.w3schools.com/css/css_rwd_images.asp
+			> .image {
+				background: url('./example.jpg') no-repeat;
+				background-size: contain;
+				display: block;
+				height: 197px;
+				width: 100%;
+			}
+			> .fieldset {
+				display: flex;
+				flex-wrap: wrap;
+				> .field {
+					margin: 0 !important;
+					.control, label {float: none !important;}
+					input {
+						// 2019-09-28
+						// https://www.fontspace.com/digital-graphics-labs/micr-encoding
+						// https://www.fontspace.com/category/cheque
+						// https://www.quora.com/Why-is-the-font-for-routing-numbers-and-account-numbers-so-strange-on-checks/answer/Stephen-Coles-1
+						@font-face {font-family: 'MICR'; src: url('./MICR.ttf');}
+						// 2019-09-28 https://www.w3schools.com/cssref/css_websafe_fonts.asp
+						font-family: 'MICR', 'Courier New', Courier, monospace;
+						font-size: 30px;
+						height: auto;
+						padding: 0 0.2em;
+						&#dfe_ach_routing {width: 5.05em;}
+						&#dfe_ach_account {width: 9em;}
+					}
+					label {
+						font-size: @fontSize;
+						font-weight: bold;
+						padding: 0.25em 0 0 0 !important;
+						width: auto !important;
+					}
+					&.required > label:after {margin: 0 !important;}
+					&:first-child {margin-right: 0.5em !important;}
 				}
-				label {
-					font-size: 14px;
-					font-weight: bold;
-					padding: 0.25em 0 0 0 !important;
-					width: auto !important;
-				}
-				&.required > label:after {margin: 0 !important;}
-				&:first-child {margin-right: 0.5em !important;}
 			}
 		}
 	}

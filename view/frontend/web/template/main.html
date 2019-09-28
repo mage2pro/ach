@@ -9,7 +9,7 @@ You can use the following for the default help text, but we definitely want to b
 	You do not need to include the check #, which is to the right of the Account #."
 » https://www.upwork.com/ab/f/contracts/22916307 -->
 <!-- ko if: config('desc') -->
-	<div data-bind="html: config('desc')"></div>
+	<div class='desc' data-bind="html: config('desc')"></div>
 <!-- /ko -->
 <!--
 2017-09-08
@@ -42,7 +42,7 @@ So, in our case the validated elements should have an ID or a name.
 				"
 				data-validate='{digits: true, maxlength: 9, minlength: 9, required: true}'
 				maxlength='9'
-				placeholder='123456789'
+				placeholder='888888888'
 				type='text'
 			>
 		</div>
@@ -72,7 +72,7 @@ so let's warn them if there are <8.»: https://www.upwork.com/ab/f/contracts/229
 				"
 				data-validate='{digits: true, maxlength: 17, minlength: 8, required: true}'
 				maxlength='17'
-				placeholder='12345678901234567'
+				placeholder='88888888888888888'
 				type='text'
 			>
 		</div>
