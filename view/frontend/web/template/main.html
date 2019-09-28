@@ -11,10 +11,15 @@ So, in our case the validated elements should have an ID or a name.
 <div class='fieldset'>
 	<div class='field required'>
 		<div class='control'>
+<!--
+2017-11-15
+`afterRender='<callback>'` does not work at least in Magento 2.0.2: https://github.com/mage2pro/stripe/issues/50
+-->
 			<input
-				class='input-text required-entry'
+				class='input-text required-entry routing'
 				data-bind="
-					attr: {
+					afterRender: dfOnRender
+					,attr: {
 						'data-container': getCode() + '-routing'
 						,id: fid('routing')
 						,title: $t('Routing Number')
@@ -24,6 +29,7 @@ So, in our case the validated elements should have an ID or a name.
 				"
 				data-validate='{digits: true, maxlength: 9, minlength: 9, required: true}'
 				maxlength='9'
+				placeholder='000000000'
 				type='text'
 			>
 		</div>
@@ -33,10 +39,15 @@ So, in our case the validated elements should have an ID or a name.
 	</div>
 	<div class='field required'>
 		<div class='control'>
+<!--
+2017-11-15
+`afterRender='<callback>'` does not work at least in Magento 2.0.2: https://github.com/mage2pro/stripe/issues/50
+-->
 			<input
 				class='input-text required-entry'
 				data-bind="
-					attr: {
+					afterRender: dfOnRender
+					,attr: {
 						'data-container': getCode() + '-account'
 						,id: fid('account')
 						,title: $t('Account Number')
@@ -46,6 +57,7 @@ So, in our case the validated elements should have an ID or a name.
 				"
 				data-validate='{digits: true, maxlength: 2, minlength: 17, required: true}'
 				maxlength='17'
+				placeholder='000000000000'
 				type='text'
 			>
 		</div>

@@ -1,6 +1,6 @@
 // 2019-09-27
 define([
-	'df', 'df-lodash', 'Df_Payment/custom', 'jquery'
+	'df', 'df-lodash', 'Df_Payment/custom', 'jquery', 'Df_Core/Mask'
 ], function(df, _, parent, $) {'use strict';
 /** 2017-09-06 @uses Class::extend() https://github.com/magento/magento2/blob/2.2.0-rc2.3/app/code/Magento/Ui/view/base/web/js/lib/core/class.js#L106-L140 */
 return parent.extend({
@@ -17,6 +17,22 @@ return parent.extend({
 	 * @returns {Object}
 	 */
 	dfData: function() {return _.assign(this._super(), {account: this.account(), routing: this.routing()});},
+	/**
+	 * 2016-08-19
+	 * Magento <= 2.1.0 calls an `afterRender` handler outside of the `this` context.
+	 * It passes `this` to an `afterRender` handler as the second argument:
+	 * https://github.com/magento/magento2/blob/2.0.9/app/code/Magento/Ui/view/base/web/js/lib/ko/bind/after-render.js#L19
+	 * Magento >= 2.1.0 calls an `afterRender` handler within the `this` context:
+	 * https://github.com/magento/magento2/blob/2.1.0/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js#L20
+	 * @param {HTMLElement} e
+	 */
+	dfOnRender: function(e) {
+		var $e = $(e);
+		// 2019-09-28 https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html#translation
+		$e.mask($e.hasClass('routing') ? '000000000' : '00ZZZZZZZZZZZZZZZ', {translation: {
+			'Z': {optional: true, pattern: /[0-9]/}}
+		});
+	},
 	/**
 	 * 2017-09-06 The method should return `this` because it is used in a chain:
 	 *	this._super()
