@@ -19,6 +19,7 @@
 		.checkout-billing-address {
 			margin-bottom: @marginV !important;
 			button {padding: 0 !important;}
+			> fieldset {margin-bottom: @marginV;}
 			> .billing-address-details {
 				font-size: @fontSize; line-height: 1.5;
 				> button {opacity: 0.5; &:hover {opacity: 1;} }
@@ -42,6 +43,7 @@
 		}
 		// 2019-09-28 The `.dfe_ach` rule is important here because we have another form: for a billing address.
 		form.dfe_ach {
+			margin-bottom: @marginV;
 			> div:not(:last-of-type) {margin-bottom: @marginV !important;}
 			> .desc {font-size: @fontSize;}
 			// 2019-09-28 "Responsive Web Design - Images": https://www.w3schools.com/css/css_rwd_images.asp
