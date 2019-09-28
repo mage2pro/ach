@@ -6,6 +6,11 @@
 	> .payment-method-content {
 		padding: 0 !important;
 		input {height: auto;}
+		.field {
+			&._required, &.required {
+				> label:after {margin: 0 !important;}
+			}
+		}
 		// 2019-08-09 It is used not only for the «Place Order» button, but for an address buttons too.
 		.actions-toolbar {
 			margin-left: 0 !important;
@@ -19,7 +24,15 @@
 				> button {opacity: 0.5; &:hover {opacity: 1;} }
 			}
 			.billing-address-form {
-				.field {margin-bottom: @marginV;}
+				font-size: @fontSize;
+				.field {
+					margin-bottom: @marginV;
+					input, select {
+						font-size: @fontSize;
+						padding: 0.3rem 0.6rem;
+						> option {padding: 0;}
+					}
+				}
 			}
 			.field-select-billing {margin-bottom: @marginV;}
 		}
@@ -60,7 +73,6 @@
 						padding: 0.25em 0 0 0 !important;
 						width: auto !important;
 					}
-					&.required > label:after {margin: 0 !important;}
 					&:first-child {margin-right: 0.5em !important;}
 				}
 			}
