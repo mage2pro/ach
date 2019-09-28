@@ -47,6 +47,10 @@ return parent.extend({
 			'dfe_ach_routing', function(v, e) {return v && 9 === v.length;}
 			,$.mage.__('Routing numbers have exactly 9 digits.')
 		);
+		$.validator.addMethod(
+			'dfe_ach_account', function(v, e) {return v && 7 < v.length;}
+			,$.mage.__('Account numbers have at least 8 digits.')
+		);
 		return this._super();
 	},
 	/**
