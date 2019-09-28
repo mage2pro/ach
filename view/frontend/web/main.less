@@ -7,9 +7,13 @@
 		padding: 0 !important;
 		input {height: auto;}
 		.field {
-			&._required, &.required {
-				> label:after {margin: 0 !important;}
-			}
+			&._required, &.required {> label:after {margin: 0 !important;}}
+			// 2019-09-28
+			// The design theme uses the rule:
+			// 		.fieldset > .field:not(.choice) > .control {width: 74.2%; float: left;}
+			// I set `width: auto` to preserve the «This is a required field.» validation message on a single line.
+			&:not(.choice) > .control {width: auto !important;}
+			.mage-error {font-weight: bold;}
 		}
 		// 2019-08-09 It is used not only for the «Place Order» button, but for an address buttons too.
 		.actions-toolbar {
