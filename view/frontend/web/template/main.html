@@ -1,3 +1,14 @@
+<!-- 2019-09-28
+«We would like to have a free text box with help text
+that we can define from the Magento -> «Configuration» -> «Payment Methods» screen.
+Just like the «Invoice Me» payment method.
+You can use the following for the default help text, but we definitely want to be able to modify it:
+	"Please input the Routing and Account numbers from the bottom of a bank check that's in your name.
+	The Routing number is the 9-digit number at the bottom left of the check.
+	The Account number is the one to the right of that.
+	You do not need to include the check #, which is to the right of the Account #."
+» https://www.upwork.com/ab/f/contracts/22916307 -->
+<!-- ko text: config('desc') --><!-- /ko -->
 <!--
 2017-09-08
 jQuery Validate plugin requres the validated elements to have a name:
@@ -42,7 +53,9 @@ So, in our case the validated elements should have an ID or a name.
 <!--
 2017-11-15
 `afterRender='<callback>'` does not work at least in Magento 2.0.2: https://github.com/mage2pro/stripe/issues/50
--->
+2019-09-28
+«The account number can be a variable length, but I've never seen one less than 8 characters,
+so let's warn them if there are <8.»: https://www.upwork.com/ab/f/contracts/22916307 -->
 			<input
 				class='input-text required-entry'
 				data-bind="
@@ -55,7 +68,7 @@ So, in our case the validated elements should have an ID or a name.
 					,value: account
 					,valueUpdate: 'keyup'
 				"
-				data-validate='{digits: true, maxlength: 2, minlength: 17, required: true}'
+				data-validate='{digits: true, maxlength: 17, minlength: 8, required: true}'
 				maxlength='17'
 				placeholder='00000000000000000'
 				type='text'
@@ -66,4 +79,8 @@ So, in our case the validated elements should have an ID or a name.
 		</label>
 	</div>
 </div>
+<!-- 2019-09-28
+«We'll also be including an image of the bottom of a check, to explain where to get the routing and account numbers.
+See the attachment (should be cropped to show just the bottom of the check instead of the whole check, I think).»
+https://www.upwork.com/ab/f/contracts/22916307 -->
 <div class='image'></div>
