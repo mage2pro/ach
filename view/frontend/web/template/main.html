@@ -1,16 +1,15 @@
-<!-- 2017-09-08
+<!--
+2017-09-08
 jQuery Validate plugin requres the validated elements to have a name:
 https://github.com/magento/magento2/blob/2.2.0-RC1.5/lib/web/jquery/jquery.validate.js#L487-L499
 Stripe and its clones forbids us to assign the `name` attribute to the bank card form elements,
 so I have implemented a patch to jQuery Validate plugin: it uses ID if the name is absent:
 https://github.com/mage2pro/core/blob/2.11.27/Core/view/base/web/main.js#L43-L72
 So, in our case the validated elements should have an ID or a name.
- -->
-<fieldset class='fieldset'>
+2019-09-28 `<fieldset>` is not compatible with `flex`: https://stackoverflow.com/a/28078942
+-->
+<div class='fieldset'>
 	<div class='field required'>
-		<label class='label' data-bind="attr: {for: fid('routing')}" >
-			<span><!-- ko df_i18n: "Routing Number"--><!-- /ko --></span>
-		</label>
 		<div class='control'>
 			<input
 				class='input-text required-entry'
@@ -28,11 +27,11 @@ So, in our case the validated elements should have an ID or a name.
 				type='text'
 			>
 		</div>
+		<label class='label' data-bind="attr: {for: fid('routing')}" >
+			<span><!-- ko df_i18n: "Routing Number"--><!-- /ko --></span>
+		</label>
 	</div>
 	<div class='field required'>
-		<label class='label' data-bind="attr: {for: fid('account')}" >
-			<span><!-- ko df_i18n: "Account Number"--><!-- /ko --></span>
-		</label>
 		<div class='control'>
 			<input
 				class='input-text required-entry'
@@ -50,5 +49,8 @@ So, in our case the validated elements should have an ID or a name.
 				type='text'
 			>
 		</div>
+		<label class='label' data-bind="attr: {for: fid('account')}" >
+			<span><!-- ko df_i18n: "Account Number"--><!-- /ko --></span>
+		</label>
 	</div>
-</fieldset>
+</div>

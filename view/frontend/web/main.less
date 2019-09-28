@@ -1,7 +1,16 @@
 // 2019-09-27
 form.dfe_ach {
-	input {
-		&#dfe_ach_routing {width: 6.5em;}
-		&#dfe_ach_account {width: 11em;}
+	.fieldset {
+		display: flex;
+		> .field {
+			margin: 0 !important;
+			.control, label {float: none !important;}
+			input {
+				&#dfe_ach_routing {width: 6.5em;}
+				&#dfe_ach_account {width: 11em;}
+			}
+			label {width: auto !important;}
+			&.required > label:after {margin: 0 !important;}
+		}
 	}
 }
