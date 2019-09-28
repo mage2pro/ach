@@ -25,13 +25,17 @@
 			}
 			.billing-address-form {
 				font-size: @fontSize;
-				.field {
-					margin-bottom: @marginV;
-					input, select {
-						font-size: @fontSize;
-						padding: 0.3rem 0.6rem;
-						> option {padding: 0;}
-					}
+				fieldset.address {margin-bottom: 0;}
+			}
+			.field {
+				// 2019-09-28 We should use `:last-child` instead of `:last-of-type`
+				// because some `.field`'s are `<fieldset>`s, not `<div>`s.
+				&:not(:last-child) {margin-bottom: @marginV;}
+				&:last-child {margin-bottom: 0;}
+				input, select {
+					font-size: @fontSize;
+					padding: 0.3rem 0.6rem;
+					> option {padding: 0;}
 				}
 			}
 			.field-select-billing {margin-bottom: @marginV;}
