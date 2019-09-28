@@ -10,6 +10,7 @@
 The Routing number is the 9-digit number at the bottom left of the check.
 The Account number is the one to the right of that. You do not need to include the check #, which is to the right of the Account #.]]></description>
 				<description_rules>
+					<allowVariables>0</allowVariables>
 					<locations>
 						<payment>
 							<shown>1</shown>

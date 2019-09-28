@@ -10,7 +10,4 @@
 			</argument>
 		</arguments>
 	</type>
-	<virtualType name='Dfe\ACH\ConfigProvider' type='Df\Payment\ConfigProvider'>
-		<arguments><argument name='module' xsi:type='string'>Dfe_ACH</argument></arguments>
-	</virtualType>
 </config>
