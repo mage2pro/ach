@@ -6,9 +6,10 @@
     <default>
 		<df_payment>
 			<ach>
-				<description><![CDATA[Please input the Routing and Account numbers from the bottom of a bank check that's in your name.
-The Routing number is the 9-digit number at the bottom left of the check.
-The Account number is the one to the right of that. You do not need to include the check #, which is to the right of the Account #.]]></description>
+				<description><![CDATA[Please input the <b>Routing</b> and <b>Account</b> numbers from the bottom of a bank check that's in your name.
+The <b>Routing</b> Number is the 9-digit number at the bottom left of the check.
+The <b>Account</b> Number is the one to the right of that.
+You do not need to include the Check #, which is to the right of the Account #.]]></description>
 				<description_rules>
 					<allowVariables>0</allowVariables>
 					<locations>

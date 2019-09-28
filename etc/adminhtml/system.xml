@@ -54,7 +54,7 @@ So the `sortOrder` value is 1920.
 					<validate>required-entry</validate>
 				</field>
 				<field
-					dfRows='5'
+					dfRows='6'
 					id='description'
 					showInDefault='1' showInStore='1' showInWebsite='1'
 					sortOrder='13'
