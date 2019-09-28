@@ -5,6 +5,7 @@
 	> .payment-method-title {padding-bottom: @marginV !important;}
 	> .payment-method-content {
 		padding: 0 !important;
+		input {height: auto;}
 		// 2019-08-09 It is used not only for the «Place Order» button, but for an address buttons too.
 		.actions-toolbar {
 			margin-left: 0 !important;
@@ -16,6 +17,9 @@
 			> .billing-address-details {
 				font-size: @fontSize; line-height: 1.5;
 				> button {opacity: 0.5; &:hover {opacity: 1;} }
+			}
+			.billing-address-form {
+				.field {margin-bottom: @marginV;}
 			}
 			.field-select-billing {margin-bottom: @marginV;}
 		}
@@ -46,7 +50,6 @@
 						// 2019-09-28 https://www.w3schools.com/cssref/css_websafe_fonts.asp
 						font-family: 'MICR', 'Courier New', Courier, monospace;
 						font-size: 30px;
-						height: auto;
 						padding: 0 0.2em;
 						&#dfe_ach_routing {width: 5.05em;}
 						&#dfe_ach_account {width: 9em;}
