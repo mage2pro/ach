@@ -5,16 +5,19 @@
 	> .payment-method-title {padding-bottom: @marginV !important;}
 	> .payment-method-content {
 		padding: 0 !important;
+		// 2019-08-09 It is used not only for the «Place Order» button, but for an address buttons too.
 		.actions-toolbar {
 			margin-left: 0 !important;
-			.primary {margin-top: 0 !important;}
+			.primary {float: none; margin-top: 0 !important;}
 		}
 		.checkout-billing-address {
 			margin-bottom: @marginV !important;
+			button {padding: 0 !important;}
 			> .billing-address-details {
 				font-size: @fontSize; line-height: 1.5;
-				> button {opacity: 0.5; &:hover {opacity: 1;}}
+				> button {opacity: 0.5; &:hover {opacity: 1;} }
 			}
+			.field-select-billing {margin-bottom: @marginV;}
 		}
 		// 2019-09-28 The `.dfe_ach` rule is important here because we have another form: for a billing address.
 		form.dfe_ach {
