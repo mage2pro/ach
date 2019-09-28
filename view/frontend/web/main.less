@@ -1,21 +1,32 @@
 // 2019-09-27
-form.dfe_ach {
-	.fieldset {
-		display: flex;
-		flex-wrap: wrap;
-		> .field {
-			margin: 0 !important;
-			.control, label {float: none !important;}
-			input {
-				&#dfe_ach_routing {width: 6.5em;}
-				&#dfe_ach_account {width: 11em;}
+.payment-method.dfe_ach {
+	.actions-toolbar {margin-left: 0 !important;}
+	form {
+		// 2019-09-28 "Responsive Web Design - Images": https://www.w3schools.com/css/css_rwd_images.asp
+		> .image {
+			background: url('./example.jpg') no-repeat;
+			background-size: contain;
+			display: block;
+			height: 197px;
+			width: 100%;
+		}
+		> .fieldset {
+			display: flex;
+			flex-wrap: wrap;
+			> .field {
+				margin: 0 !important;
+				.control, label {float: none !important;}
+				input {
+					&#dfe_ach_routing {width: 6.5em;}
+					&#dfe_ach_account {width: 11em;}
+				}
+				label {
+					padding: 0.25em 0 0 0 !important;
+					width: auto !important;
+				}
+				&.required > label:after {margin: 0 !important;}
+				&:first-child {margin-right: 0.5em !important;}
 			}
-			label {
-				padding: 0.25em 0 0 0 !important;
-				width: auto !important;
-			}
-			&.required > label:after {margin: 0 !important;}
-			&:first-child {margin-right: 0.5em !important;}
 		}
 	}
 }
