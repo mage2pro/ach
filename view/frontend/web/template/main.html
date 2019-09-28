@@ -23,7 +23,7 @@ So, in our case the validated elements should have an ID or a name.
 -->
 <div class='fieldset'>
 	<div class='field required'>
-		<div class='control'>
+		<div class='control routing'>
 <!--
 2017-11-15
 `afterRender='<callback>'` does not work at least in Magento 2.0.2: https://github.com/mage2pro/stripe/issues/50
@@ -40,7 +40,7 @@ So, in our case the validated elements should have an ID or a name.
 					,value: routing
 					,valueUpdate: 'keyup'
 				"
-				data-validate='{digits: true, maxlength: 9, minlength: 9, required: true}'
+				data-validate='{required: true, digits: true, dfe_ach_routing: true}'
 				maxlength='9'
 				placeholder='888888888'
 				type='text'
@@ -51,7 +51,7 @@ So, in our case the validated elements should have an ID or a name.
 		</label>
 	</div>
 	<div class='field required'>
-		<div class='control'>
+		<div class='control account'>
 <!--
 2017-11-15
 `afterRender='<callback>'` does not work at least in Magento 2.0.2: https://github.com/mage2pro/stripe/issues/50

@@ -1,6 +1,6 @@
 // 2019-09-27
 define([
-	'df', 'df-lodash', 'Df_Payment/custom', 'jquery', 'Df_Core/Mask'
+	'df', 'df-lodash', 'Df_Payment/custom', 'jquery', 'Df_Core/Mask', 'mage/validation'
 ], function(df, _, parent, $) {'use strict';
 /** 2017-09-06 @uses Class::extend() https://github.com/magento/magento2/blob/2.2.0-rc2.3/app/code/Magento/Ui/view/base/web/js/lib/core/class.js#L106-L140 */
 return parent.extend({
@@ -35,6 +35,19 @@ return parent.extend({
 		$e.mask($e.hasClass('routing') ? '000000000' : '00000000ZZZZZZZZZ', {translation: {
 			'Z': {optional: true, pattern: /[0-9]/}}
 		});
+	},
+	/**
+	 * 2019-09-29
+	 * @override
+	 * @see Df_Payment/custom::initialize()
+	 * @returns {exports}
+	*/
+	initialize: function() {
+		$.validator.addMethod(
+			'dfe_ach_routing', function(v, e) {return v && 9 === v.length;}
+			,$.mage.__('Routing numbers have exactly 9 digits.')
+		);
+		return this._super();
 	},
 	/**
 	 * 2017-09-06 The method should return `this` because it is used in a chain:

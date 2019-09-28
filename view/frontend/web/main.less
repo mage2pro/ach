@@ -69,18 +69,24 @@
 				> .field {
 					margin: 0 !important;
 					.control, label {float: none !important;}
-					input {
+					.control {
 						// 2019-09-28
 						// https://www.fontspace.com/digital-graphics-labs/micr-encoding
 						// https://www.fontspace.com/category/cheque
 						// https://www.quora.com/Why-is-the-font-for-routing-numbers-and-account-numbers-so-strange-on-checks/answer/Stephen-Coles-1
 						@font-face {font-family: 'MICR'; src: url('./MICR.ttf');}
-						// 2019-09-28 https://www.w3schools.com/cssref/css_websafe_fonts.asp
-						font-family: 'MICR', 'Courier New', Courier, monospace;
-						font-size: 30px;
-						padding: 0 0.2em;
-						&#dfe_ach_routing {width: 5.05em;}
-						&#dfe_ach_account {width: 9em;}
+						// 2019-09-29
+						// I set `font-family` and `font-size` not only to `<input>`, but to `.control` too
+						// because it allows me to properly set a width in `em` for  `.control`.
+						// I need it to bound validation messages to the `.control` width.
+						&, > input {
+							// 2019-09-28 https://www.w3schools.com/cssref/css_websafe_fonts.asp
+							font-family: 'MICR', 'Courier New', Courier, monospace;
+							font-size: 30px;
+						}
+						&.account {width: 9em !important;}
+						&.routing {width: 5.05em !important;}
+						input {padding: 0 0.2em;}
 					}
 					label {
 						font-size: @fontSize;
