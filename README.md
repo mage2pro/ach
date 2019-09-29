@@ -1,6 +1,8 @@
 An ACH payment module for Magento 2.
 The module is **free** and **open source**.
 
+![](https://mage2.pro/uploads/default/original/2X/d/d655e6942c02834346c88ae1292cbaec1d8d784c.png)
+
 ## How to install
 [Hire me in Upwork](https://www.upwork.com/fl/mage2pro), and I will: 
 - install and configure the module properly on your website
