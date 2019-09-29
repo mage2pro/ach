@@ -38,7 +38,6 @@ So, in our case the validated elements should have an ID or a name.
 						,title: $t('Routing Number')
 					}
 					,value: routing
-					,valueUpdate: 'keyup'
 				"
 				data-validate='{required: true, digits: true, dfe_ach_routing: true}'
 				maxlength='9'
@@ -68,7 +67,6 @@ so let's warn them if there are <8.»: https://www.upwork.com/ab/f/contracts/229
 						,title: $t('Account Number')
 					}
 					,value: account
-					,valueUpdate: 'keyup'
 				"
 				data-validate='{required: true, digits: true, dfe_ach_account: true}'
 				maxlength='17'

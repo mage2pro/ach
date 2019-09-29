@@ -44,11 +44,11 @@ return parent.extend({
 	*/
 	initialize: function() {
 		$.validator.addMethod(
-			'dfe_ach_routing', function(v, e) {return v && 9 === v.length;}
+			'dfe_ach_routing', function(v) {return v && 9 === v.length;}
 			,$.mage.__('Routing numbers have exactly 9 digits.')
 		);
 		$.validator.addMethod(
-			'dfe_ach_account', function(v, e) {return v && 7 < v.length;}
+			'dfe_ach_account', function(v) {return v && 7 < v.length;}
 			,$.mage.__('Account numbers have at least 8 digits.')
 		);
 		return this._super();
@@ -68,5 +68,10 @@ return parent.extend({
 	 * https://github.com/magento/magento2/blob/2.3.2/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js#L36-L48
 	 * @returns {Element} Chainable
 	*/
-	initObservable: function() {return this._super().observe(['account', 'routing']);},
+	initObservable: function() {
+		this._super().observe(['account', 'routing']);
+		this.account.subscribe(function() {this.validateElement('#dfe_ach_account');}, this);
+		this.routing.subscribe(function() {this.validateElement('#dfe_ach_routing');}, this);
+		return this;
+	},
 });});
