@@ -3,7 +3,7 @@
 // On a validation error, Magento wrongly scrolls the page, and the problem input becames hidden under the header.
 // I fixed it by the mixin.
 var config = {config: {mixins: {
-	'mage/validation': {'Dfe_ACH/validation': true
+	'mage/validation': {'Dfe_ACH/validation': true}
 	/**
 	 * 2019-09-30
 	 * Without this mixin, even the standard Magento 2.3.2 checkout
@@ -23,4 +23,4 @@ var config = {config: {mixins: {
 	 * https://github.com/mage2pro/dragonpay/issues/5
 	 */
 	,'Magento_Checkout/js/view/payment/list': {'Dfe_ACH/payment-list': true}
-}}}};
+}}};
