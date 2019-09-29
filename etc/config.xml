@@ -6,6 +6,10 @@
     <default>
 		<df_payment>
 			<ach>
+<!-- 2019-09-29
+@used-by \Df\Payment\Init\Action::preconfigured()
+https://github.com/mage2pro/core/blob/5.3.4/Payment/Init/Action.php#L205-L207 -->
+				<action>df-null</action>
 				<description><![CDATA[Please input the <b>Routing</b> and <b>Account</b> numbers from the bottom of a bank check that's in your name.
 The <b>Routing</b> Number is the 9-digit number at the bottom left of the check.
 The <b>Account</b> Number is the one to the right of that.
