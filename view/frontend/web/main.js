@@ -28,11 +28,16 @@ return parent.extend({
 	 */
 	dfOnRender: function(e) {
 		var $e = $(e);
-		// 2019-09-28
-		// 1) https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html#translation
-		// 2) «The account number can be a variable length, but I've never seen one less than 8 characters,
-		// so let's warn them if there are <8.»: https://www.upwork.com/ab/f/contracts/22916307
-		$e.mask($e.hasClass('routing') ? '000000000' : '00000000ZZZZZZZZZ', {translation: {
+		/**
+		 * 2019-09-28
+		 * 1) https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html#translation
+		 * 2) «The account number can be a variable length, but I've never seen one less than 8 characters,
+		 * so let's warn them if there are <8.»: https://www.upwork.com/ab/f/contracts/22916307
+		 * 2019-09-29
+		 * It seems that the minimum account number length is 4, not 8:
+		 * https://stackoverflow.com/questions/1540285
+		 */
+		$e.mask($e.hasClass('routing') ? '000000000' : '0000ZZZZZZZZZZZZZ', {translation: {
 			'Z': {optional: true, pattern: /[0-9]/}}
 		});
 	},
@@ -48,8 +53,8 @@ return parent.extend({
 			,$.mage.__('Routing numbers have exactly 9 digits.')
 		);
 		$.validator.addMethod(
-			'dfe_ach_account', function(v) {return v && 7 < v.length;}
-			,$.mage.__('Account numbers have at least 8 digits.')
+			'dfe_ach_account', function(v) {return v && 3 < v.length;}
+			,$.mage.__('Account numbers have at least 4 digits.')
 		);
 		return this._super();
 	},
