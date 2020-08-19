@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\ACH;
-// 2019-09-28
+# 2019-09-28
 final class Method extends \Df\Payment\Method {
 	/**
 	 * 2019-09-29

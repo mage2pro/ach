@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\ACH;
-// 2019-09-28
+# 2019-09-28
 /** @method Settings s() */
 final class ConfigProvider extends \Df\Payment\ConfigProvider {
 	/**
