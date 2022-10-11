@@ -13,7 +13,7 @@ The module is **free** and **open source**.
 ### Self-installation
 ```
 bin/magento maintenance:enable
-rm -rf composer.lock
+rm -f composer.lock
 composer clear-cache
 composer require mage2pro/ach:*
 bin/magento setup:upgrade
@@ -29,7 +29,7 @@ bin/magento maintenance:disable
 ```
 bin/magento maintenance:enable
 composer remove mage2pro/ach
-rm -rf composer.lock
+rm -f composer.lock
 composer clear-cache
 composer require mage2pro/ach:*
 bin/magento setup:upgrade
