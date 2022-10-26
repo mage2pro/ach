@@ -41,15 +41,15 @@ final class Method extends \Df\Payment\Method {
 
 	/**
 	 * 2019-09-29
-	 * @used-by iiaKeys()
-	 * @used-by account()
+	 * @used-by self::account()
+	 * @used-by self::iiaKeys()
 	 */
 	private static $II_ACCOUNT = 'account';
 
 	/**
 	 * 2019-09-29
-	 * @used-by iiaKeys()
-	 * @used-by routing()
+	 * @used-by self::iiaKeys()
+	 * @used-by self::routing()
 	 */
 	private static $II_ROUTING = 'routing';
 }
