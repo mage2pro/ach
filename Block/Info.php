@@ -20,9 +20,9 @@ class Info extends \Df\Payment\Block\Info {
 	 * @see \Df\Payment\Block\Info::prepare()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
-	final protected function prepare():void {
-		$this->si(['Routing Number' => $this->m()->routing(), 'Account Number' => $this->m()->account()]);
-	}
+	final protected function prepare():void {$this->si([
+		'Routing Number' => $this->m()->routing(), 'Account Number' => $this->m()->account()
+	]);}
 
 	/**
 	 * 2019-09-30
