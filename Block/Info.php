@@ -30,8 +30,5 @@ class Info extends \Df\Payment\Block\Info {
 	 * @see \Df\Payment\Block\Info::prepareUnconfirmed()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
-	final protected function prepareUnconfirmed():void {
-		parent::prepareUnconfirmed();
-		$this->prepare();
-	}
+	final protected function prepareUnconfirmed():void {parent::prepareUnconfirmed(); $this->prepare();}
 }
