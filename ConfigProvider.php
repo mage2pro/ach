@@ -10,7 +10,7 @@ final class ConfigProvider extends \Df\Payment\ConfigProvider {
 	 * @used-by \Df\Payment\ConfigProvider::getConfig()
 	 * @return array(string => mixed)
 	 */
-	protected function config() {/** @var Settings $s */ $s = $this->s(); return [
+	protected function config():array {/** @var Settings $s */ $s = $this->s(); return [
 		 /**
 		  * 2019-09-28
 		  * 1) «We would like to have a free text box with help text

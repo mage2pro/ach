@@ -30,7 +30,7 @@ final class Method extends \Df\Payment\Method {
 	 * @used-by \Df\Payment\Method::assignData()
 	 * @return string[]
 	 */
-	protected function iiaKeys() {return [self::$II_ACCOUNT, self::$II_ROUTING];}
+	protected function iiaKeys():array {return [self::$II_ACCOUNT, self::$II_ROUTING];}
 
 	/**
 	 * 2019-09-28

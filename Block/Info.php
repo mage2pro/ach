@@ -11,9 +11,8 @@ class Info extends \Df\Payment\Block\Info {
 	 * @override
 	 * @see \Df\Payment\Block\Info::msgUnconfirmed()
 	 * @used-by \Df\Payment\Block\Info::rUnconfirmed()
-	 * @return string|null
 	 */
-	final protected function msgUnconfirmed() {return null;}
+	final protected function msgUnconfirmed():string {return '';}
 
 	/**
 	 * 2019-09-29
@@ -21,7 +20,7 @@ class Info extends \Df\Payment\Block\Info {
 	 * @see \Df\Payment\Block\Info::prepare()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
-	final protected function prepare() {
+	final protected function prepare():void {
 		$this->si(['Routing Number' => $this->m()->routing(), 'Account Number' => $this->m()->account()]);
 	}
 
@@ -31,7 +30,7 @@ class Info extends \Df\Payment\Block\Info {
 	 * @see \Df\Payment\Block\Info::prepareUnconfirmed()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
-	final protected function prepareUnconfirmed() {
+	final protected function prepareUnconfirmed():void {
 		parent::prepareUnconfirmed();
 		$this->prepare();
 	}
