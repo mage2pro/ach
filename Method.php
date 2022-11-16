@@ -10,6 +10,7 @@ final class Method extends \Df\Payment\Method {
 
 	/**
 	 * 2019-09-29
+	 * @used-by \Dfe\ACH\Block\Info::prepare()
 	 */
 	function routing():string {return $this->iia(self::$II_ROUTING);}
 
