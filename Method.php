@@ -4,22 +4,20 @@ namespace Dfe\ACH;
 final class Method extends \Df\Payment\Method {
 	/**
 	 * 2019-09-29
-	 * @return string
 	 */
-	function account() {return $this->iia(self::$II_ACCOUNT);}
+	function account():string {return $this->iia(self::$II_ACCOUNT);}
 
 	/**
 	 * 2019-09-29
-	 * @return string
 	 */
-	function routing() {return $this->iia(self::$II_ROUTING);}
+	function routing():string {return $this->iia(self::$II_ROUTING);}
 
 	/**
 	 * 2019-09-28
 	 * @override
 	 * @see \Df\Payment\Method::amountLimits()
 	 * @used-by \Df\Payment\Method::isAvailable()
-	 * @return \Closure
+	 * @return null
 	 */
 	protected function amountLimits() {return null;}
 
