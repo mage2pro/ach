@@ -22,7 +22,7 @@ final class ConfigProvider extends \Df\Payment\ConfigProvider {
 		  * 	The Account number is the one to the right of that.
 		  * 	You do not need to include the check #, which is to the right of the Account #."
 		  * » https://www.upwork.com/ab/f/contracts/22916307
-		  * 2) @see \Df\GingerPaymentsBase\ConfigProvider::config()
+		  * 2) @see \Dfe\GingerPaymentsBase\ConfigProvider::config()
 		  * https://github.com/mage2pro/ginger-payments-base/blob/1.2.3/ConfigProvider.php#L45
 		  */
 		'desc' => nl2br($s->description())
